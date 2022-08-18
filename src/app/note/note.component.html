@@ -1,0 +1,22 @@
+<div id="note" *ngFor="let note of noteArray; let i = index">
+  <div class="max-w-lg p-2 mb-10 bg-blue-800 rounded-xl min-w-100">
+    <div class="bg-blue-100 rounded-md">
+      <div class="flex justify-center pt-1 pb-1 bg-blue-100">
+        <h1
+          contenteditable="true"
+          id="note-title"
+          (keyup)="limitTitle(i)"
+          class="text-2xl font-bold outline-none font-raleway"
+        >
+          {{ note.title }}
+        </h1>
+      </div>
+      <div
+        contenteditable="true"
+        class="outline-none font-raleway note-content"
+      >
+        <p>{{ note.content }}</p>
+      </div>
+    </div>
+  </div>
+</div>
