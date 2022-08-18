@@ -42,9 +42,11 @@ export class NoteComponent implements OnInit {
       } else if (this.counter < 3) {
         this.counter++;
       } else {
-        this.noteArray[2].content = this.noteArray[1].content;
-        this.noteArray[1].content = this.noteArray[0].content;
-        this.noteArray[0].content = info;
+        if (info != '') {
+          this.noteArray[2].content = this.noteArray[1].content;
+          this.noteArray[1].content = this.noteArray[0].content;
+          this.noteArray[0].content = info;
+        }
       }
     });
   }
